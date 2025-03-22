@@ -9,8 +9,18 @@ function App() {
   const addValue=()=>{
     setCounter(counter+1);
   }
+
+  const ResetVal=()=>{
+    setCounter(counter=0);
+  }
   const removeVal=()=>{
-    setCounter(counter-1);
+    if(counter <=0){
+      counter=0;
+    }
+    else{
+      setCounter(counter-1);
+    }
+    
   }
 
   return (
@@ -21,8 +31,13 @@ function App() {
       <button onClick={addValue}> Add Value</button>
 
       <button onClick={removeVal}> Remove Value</button>
+
+      <button onClick={ResetVal}> Reset Value</button>
     </>
   )
 }
 
 export default App
+
+// callback useref memo customhook
+
